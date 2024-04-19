@@ -6,26 +6,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificado</title>
     <style>
-        /* Estilos para a frente do certificado */
-        .front {
-            /* Adicione seus estilos para a frente do certificado aqui */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: gray;
+            font: 12pt "Tahoma";
+          }
+          
+          * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-print-color-adjust: exact; /** Garante a impressão do que está na tela backgorunds por exemplo **/
+          }
+          
+          .page {
+            width: 29.7cm;
+            min-height: 21cm;
+            padding: 1cm;
+            margin: 0;
+            border: 1px #D3D3D3 solid;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+           
+          }
+        
+        .subpage .fundo{
+            background-image: url("../../static/imagens/frenteCertificado.png");
+    
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-top: -1.5cm;
+      
         }
-        /* Estilos para o verso do certificado */
-        .back {
-            /* Adicione seus estilos para o verso do certificado aqui */
+
+        .subpage .fundoVerso{
+            background-image: url("../../static/imagens/versoCertificado.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 29.7cm;
+            min-height: 19cm;
+            margin: -10mm;
+            top: -10cm;
         }
+
+        .subpage .textoFrente{
+            position: relative;
+            left: 20mm;
+            top: 70mm;
+            text-align: justify;
+            font-size: 16pt;
+            width: 23cm;
+            min-height: 21cm;
+            margin: 5mm;
+        }
+
+        .subpage .textoFundo{
+            position: relative;
+            left: 20mm;
+            top: 70mm;
+            top: 75mm auto;
+            text-align: justify;
+            font-size: 16pt;
+            width: 25cm;
+            min-height: 21cm;
+            margin: 30m;
+        }
+        .subpage {
+        padding: 0;
+        height: 190mm;
+        width: 277mm;
+        border 1px solid black;
+        }
+        
+          
+          @page {
+            size: A4 landscape;
+            margin: 0;
+          }
+          
+
+            @media print { 
+            .print-page {
+                margin: 0;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+            }
+
+            }
+        
     </style>
 </head>
 <body>
-    <div class="front">
-        <!-- Conteúdo da frente do certificado -->
-        <h1>Certificado de Participação</h1>
-        <p>Este certificado atesta que [Nome] participou do evento [Nome do Evento]...</p>
-    </div>
-    <div class="back">
-        <!-- Conteúdo do verso do certificado -->
-        <h1>Verso do Certificado</h1>
-        <p>Este é o verso do certificado...</p>
-    </div>
+        <div class="page">
+          <div class="subpage">
+                <div class="fundo">
+                    <!-- Conteúdo da frente do certificado -->
+                    <div class="textoFrente">
+                        <p>Certificamos que {{ nome }}, participou da {{ evento }} como membro da
+                            banca examinadora da defesa do Trabalho de Conclusão de Curso, com o Título: MAIS UM TÍTULO COMPRIDO DEMAIS PARA EU DECORAR E AINDA NÃO É O BASTANTE,
+                             do(a) aluno(a) CICRANDO DA SILVA SAURO, defendido em 30/02/2024 às
+                            25:00, na sala virtual da Plataforma MEETING do IFMT.
+                        </p>
+                        <p>Certificamos que {{ nome }}, participou da {{ evento }} como membro da
+                            banca examinadora da defesa do Trabalho de Conclusão de Curso, com o Título: MAIS UM TÍTULO COMPRIDO DEMAIS PARA EU DECORAR E AINDA NÃO É O BASTANTE,
+                             do(a) aluno(a) CICRANDO DA SILVA SAURO, defendido em 30/02/2024 às
+                            25:00, na sala virtual da Plataforma MEETING do IFMT.
+                        </p>
+                    </div>            
+                </div>
+          </div>
+        </div>
+
+        <div class="page">
+            <div class="subpage">
+                  <div class="fundoVerso">
+                      <!-- Conteúdo da frente do certificado -->
+                      <div class="textoFundo">
+                          <p>Aqui colocaremos as infotmações para dizer o que foi feito no evento, código de validação do certificado
+                          </p>
+                          <p>
+                            Nunc consectetur metus nunc, eu rhoncus metus posuere eleifend. Integer pulvinar, eros ac maximus tincidunt, enim augue ultrices nulla, sed malesuada diam arcu in quam. Aliquam quis dolor ultrices, hendrerit metus a, eleifend eros. Aliquam vehicula urna sit amet massa auctor, eu consectetur massa fringilla. Etiam ac sodales lorem. Pellentesque consequat dolor elit. Aliquam vitae purus blandit, cursus eros ut, facilisis mauris. Duis tempor dolor diam, sit amet aliquet est accumsan in. Donec tempus volutpat sapien, non feugiat elit pretium sit amet. Morbi venenatis eget urna eu tempor. Donec semper est eget eros euismod finibus. Donec sem quam, molestie a dolor at, rutrum congue sem. Vestibulum id felis eu nunc tempor lobortis in a elit.
+                          </p>
+                      </div>            
+                  </div>
+            </div>
+          </div>
+
 </body>
 </html>
